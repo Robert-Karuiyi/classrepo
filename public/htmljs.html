@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascripthtml</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        table,th,tr,td {border: 1px solid black; border-collapse: collapse;width: auto;text-align: center}
+        th,td {padding: 5px;}
+        tr:nth-child(even) {background-color: #87CEEB}
+    </style>
+</head>
+
+<body class="container">
+<h1>My first <em>javascript</em></h1>
+<hr>
+<button type="button" title="What is the time Mr. Lion?"
+        onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.
+</button>
+<p id="demo"></p>
+<div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong>You should <a href="https://www.google.com" class="alert-link">read this message.</a>
+</div>
+<div class="alert alert-warning alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong>You were warned
+</div>
+<p id="magic">With JS magic is possible</p>
+<button type="button" onclick="myfunction()">Watch this</button>
+<script>
+    function myfunction() {
+        document.getElementById("magic").style.color="red";
+        document.getElementById("magic").style.backgroundColor="blue";
+        document.getElementById("magic").style.fontFamily="ariel";
+        document.getElementById("magic").style.float="right";
+
+    }
+</script>
+<noscript>
+    Sorry, your browser does not support javascript.
+</noscript>
+
+<p>Polpular saying</p>
+<blockquote cite="https://www.facebook.com"><strong>Home is best</strong></blockquote>
+
+<table style="width: 100%; border: 1px groove ">
+    <caption style="text-align: center" class="text-uppercase"><em><strong>Sport Legends</strong></em></caption>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Skill</th>
+        <th colspan="2">Career</th>
+    </tr>
+    <tr>
+        <td>Steven Gerrard</td>
+        <td>23</td>
+        <td>Football</td>
+        <td>Liverpool</td>
+        <td>LA Galaxy</td>
+    </tr>
+    <tr>
+        <td>Michael Jordan</td>
+        <td>32</td>
+        <td>Basketball</td>
+        <td>Chicago Bulls</td>
+        <td>USA</td>
+    </tr>
+    <tr>
+        <td>Eliud Kipchoge</td>
+        <td>33</td>
+        <td>Marathon</td>
+        <td>Eldoret</td>
+        <td>Kenya</td>
+    </tr>
+
+</table>
+<br>
+<dl>
+    <dt><span class="label label-default">Common qualities among legends</span></dt>
+    <dd><span class="labe label-primary">Perseverance></span></dd>
+    <dd><span class="label label-success">Hard work</span></dd>
+    <dd><span class="label label-info">Dedication</span></dd>
+</dl>
+<p> Envelop icon: <span class="glyphicon glyphicon-envelope"></span></p>
+<p>Envelop icon as a link:
+<a href="#"><span class="glyphicon glyphicon-envelope"></span> </a> </p>
+<ul class="pagination">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+</ul>
+
+</body>
+</html>

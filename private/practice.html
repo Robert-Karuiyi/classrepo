@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Robert Karuiyi">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>RIKA GENERAL STORES</title>
+    <style>
+        h1 {font-family: "Comic Sans MS" ; color: mintcream; font-size: xx-large; background-color: crimson; text-align: center}
+        body {background-color: honeydew}
+
+        ul#head {list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: crimson;}
+
+        li {float: left;}
+
+        li a {display: block;
+            color: white;
+            text-align: center;
+            padding: 0;
+            text-decoration: none;}
+
+        li a:hover {background-color: yellowgreen;}
+
+        a:link {background-color: crimson;
+             color: white;
+             padding: 15px 25px;
+             text-align: center;
+             text-decoration: none;
+             display: inline-block}
+        a:visited {background-color: #f44336;
+             color: whitesmoke;
+             padding: 15px 25px;
+             text-align: center;
+             text-decoration: none;
+             display: inline-block;}
+
+        a:hover {background-color: yellowgreen;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block}
+        a:active {background-color: red;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block}
+
+
+    </style>
+</head>
+<body class="container container-fluid">
+
+    <div style="background-color: crimson" class="page-header">
+        <h1 style="color: white"><a href="#">RIKA</a></h1><!--Choose a suitable font-->
+
+    <ul id="head" class="hs-breadcrumb-menu-divider" style="color: white">
+        <li class="active"><a href="#Home">Home</a></li>
+        <li><a href="#Offers">Offers<span class="badge">5</span> </a></li>
+        <li><a href="#Categories">Categories</a></li>
+        <li><a href="#Extras">Extras<span class="badge">10</span> </a></li>
+        <li><a href="#Browse">Browse <span class="glyphicon glyphicon-search"></span></a></li>
+        <li><a href="#Compare">Compare</a></li>
+    </ul>
+<p style="color: white"><em><q>We have been friends together in sunshine and in shade.</q></em> Caroline Norton</p>
+        <a href="#bottom" target="_parent">Go to bottom</a>
+</div>
+<button onclick="document.location='https://www.amazon.com'"><abbr title="RIKA GENERAL STORES";>R.G.S.</abbr></button>
+<a href="https://www.google.com">Home</a>
+    <figure>
+    <img src="../img/african-crowned-crane-birds-wallpapers-3.jpeg" style="max-width: 100%">
+        <figcaption>The African crowned crane bird</figcaption>
+    </figure>
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail" style="border: none">
+            <a href="../img/Savannah.jpeg">
+                <img src="../img/Savannah.jpeg" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p>Lorem ipsum...</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail" style="border: none">
+            <a href="../img/Warrior.jpg">
+                <img src="../img/Warrior.jpg" alt="Nature" style="width: 100%">
+                <div class="caption">
+                    <p>Lorem ipsum...</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+    <textarea name="message" rows="3" cols="100">
+        The cat was playing in the garden
+    </textarea>
+    <div class="well">"All is well"</div>
+    <form action="/action_page.php" id="bottom" autocomplete="on">
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John" size="5"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" autocomplete="on" placeholder="Em@il"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <form action="/action_page.php">
+        <input list="browsers" placeholder="Browsers">
+        <datalist id="browsers">
+            <option value="Internet explorer">
+                <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+    </form>
+    <ul class="pagination pager" style="float: right">
+        <li class="carousel-control-prev-icon"><a href="#">Previous</a></li>
+        <li class="active" title="You are here"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="disabled"><a href="#">5</a></li>
+        <li class="carousel-control-next-icon"><a href="#">Next</a></li>
+    </ul>
+</body>
+</html>

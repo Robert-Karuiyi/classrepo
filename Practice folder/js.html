@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+        .w3-tangerine {
+            font-family: "Tangerine", serif;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="w3-container w3-tangerine">
+    <p class="w3-xxlarge">Making the Web Beautiful!</p>
+    <p class="w3-xxxlarge">Making the Web Beautiful!</p>
+    <p class="w3-jumbo">Making the Web Beautiful!</p>
+</div>
+
+<picture>
+    <source srcset="../img/Savannah.jpeg" media="(max-width:600px")>
+    <source srcset="../img/Savannah.jpeg" media="(max-width:1500px">
+    <source srcset="../img/Savannah.jpeg">
+    <img src="../img/Savannah.jpeg" alt="Savannah">
+</picture>
+<h2>Use javascript to change text</h2>
+<p>Shows how js can be used to change styles using a HTML element with id = "alpha":</p>
+<br>
+<p id="alpha">Magic</p>
+
+<script>
+  function myFunction() {
+      document.getElementById("alpha").style.fontSize="25px";
+      document.getElementById("alpha").style.color="rgba(200,30,70,0.5)";
+      document.getElementById("alpha").style.backgroundColor="rgba(70,55,80,0.3)";
+
+  }
+</script>
+<noscript>Sorry, your browser does not suport javascript</noscript>
+<button type="button" onclick="myFunction()">Click here</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+h1 {
+    text-align:center;
+    font-family:fantasy;
+    color:darkgreen;
+}
+a:link {
+    color:white;
+    text-decoration: none
+}
+a:active {color: greenyellow}
+a:hover {
+    color: darkgreen
+/*}*/
+/*ul {*/
+/*    overflow: hidden;*/
+/*    background-color: rgba(0,0,0,0.8)*/
+/*}*/
+/*li {*/
+/*    display:inline-block;*/
+/*    margin: 10px;*/
+/*}*/
+button {
+    button:group;
+}
+p {
+    color: white;
+    background-color: rgba(0,0,0,0.8)
+}
+img {
+    max-width:100%;
+    border: none;
+}
+body {
+    background-image: url("../img/Savannah.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+}

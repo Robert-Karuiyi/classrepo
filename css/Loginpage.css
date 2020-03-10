@@ -1,0 +1,30 @@
+body{
+    background-color: whitesmoke;
+}
+h1 {
+    text-align: center;
+}
+fieldset {
+    text-align: center;
+}
+label {
+    display : block;
+    text-align: center;
+}
+a {
+    display: block;
+    align-items: center;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    text-align: center;
+}
+#glys {
+    text-align: center;
+    font-size: 25px;
+}
+hr {
+    border: 1px solid purple;
+}

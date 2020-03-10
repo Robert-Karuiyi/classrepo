@@ -1,0 +1,53 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+
+}
+.container {
+    display: grid;
+    grid-template: repeat(3,1fr)/repeat(8,1fr);
+    grid-template-areas:
+      "h h h h h h h h"
+      "a a b b c c d d"
+      "f f f f f f d d" ;
+    grid-gap: 10px;
+    /*grid-template-rows: 1fr 1fr 1fr;*/
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+}
+
+div#header {
+    grid-area: h;
+    background-color: #D0021B;
+}
+
+section#a {
+    grid-area: a;
+    background-color: #9013FE;
+}
+
+section#b {
+    grid-area: b;
+    background-color: #F8E71C;
+}
+
+section#c {
+    grid-area: c;
+    background-color: chocolate;
+}
+
+section#d {
+    grid-area: d;
+    background-color: purple;
+}
+
+footer {
+    grid-area: f;
+    background-color: #50E3c2;
+}
