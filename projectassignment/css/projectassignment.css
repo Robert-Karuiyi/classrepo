@@ -156,7 +156,7 @@ iframe {
     }
 }
 @media screen and (min-width: 600px) {
-    .ulele li:not(:first-child) {
+     article.inform {
         display: none;
     }
 }

@@ -17,7 +17,6 @@ img {
       "h h h h h h h h"
       "a a b b c c d d"
       "f f f f f f d d" ;
-    grid-gap: 10px;
     /*grid-template-rows: 1fr 1fr 1fr;*/
     /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
 }

@@ -15,11 +15,21 @@
 
 </head>
 <body>
+<script>
+    window.alert(1+1);
+</script>
+<p id="demo">Night vibes</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML="Today we learn javascript"';>
+Click me</button>
 <div class="w3-container w3-tangerine">
-    <p class="w3-xxlarge">Making the Web Beautiful!</p>
-    <p class="w3-xxxlarge">Making the Web Beautiful!</p>
+    <p class="w3-xxlarge" id="proto">Making the Web Beautiful!</p>
+    <p class="w3-xxxlarge" id="hide">Making the Web Beautiful!</p>
+    <button type="button" onclick="document.getElementById('hide').style.display='none'";>Hide</button>
     <p class="w3-jumbo">Making the Web Beautiful!</p>
 </div>
+<button type="button" onclick="document.getElementById('proto').style.color='blue'";>
+    Touche
+</button>
 
 <picture>
     <source srcset="../img/Savannah.jpeg" media="(max-width:600px")>

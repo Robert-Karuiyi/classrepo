@@ -1,0 +1,368 @@
+---- HTML WEB RESPONSIVENESS--------
+
+What is Responsive Web Design?
+Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones):
+
+
+Setting The Viewport
+When making responsive web pages, add the following <meta> element in all your web pages:
+
+Example
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+---------- RESPONSIVE IMAGES ------------
+
+Responsive images are images that scale nicely to fit any browser size.
+
+1. ------Using the width Property---------------
+/''
+If the CSS width property is set to 100%, the image will be responsive and scale up and down:
+
+
+example
+<img src="img_girl.jpg" style="width:100%;">
+
+ A better solution, in many cases, will be to use the max-width property instead.
+
+2. -------- Using the max-width Property ------------
+If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:
+
+
+
+------Show Different Images Depending on Browser Width-----------
+
+The HTML <picture> element allows you to define different images for different browser window sizes.
+
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_smallflower.jpg" alt="Flowers">
+</picture>
+
+
+
+--- Responsive text size ----------
+
+The text size can be set with a "vw" unit, which means the "viewport width".
+
+That way the text size will follow the size of the browser window:
+
+example
+
+<h1 style="font-size:10vw">Hello World</h1>
+
+
+
+--------- MEDIA QUERIES --------------
+In addition to resize text and images, it is also common to use media queries in responsive web pages.
+
+With media queries you can define completely different styles for different browser sizes.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing:border-box;
+}
+
+.left {
+  background-color:#2196F3;
+  padding:20px;
+  float:left;
+  width:20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color:#f1f1f1;
+  padding:20px;
+  float:left;
+  width:60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color:#4CAF50;
+  padding:20px;
+  float:left;
+  width:20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:800px) {
+  .left, .main, .right {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Media Queries</h2>
+<p>Resize the browser window.</p>
+
+<p>Make sure you reach the breakpoint at 800px when resizing this frame.</p>
+
+<div class="left">
+  <p>Left Menu</p>
+</div>
+
+<div class="main">
+  <p>Main Content</p>
+</div>
+
+<div class="right">
+  <p>Right Content</p>
+</div>
+
+</body>
+</html>
+
+
+
+Basically a responsive web page should look good on large desktop screens , laptops and mobile phones 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+  <h1>Hello World</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+  </div>
+
+  <div class="main">
+    <h2>Lorum Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+  </div>
+</div>
+
+<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+
+</body>
+</html>
+
+
+
+---- Responsive design frameworks ------------=---
+
+There are many existing CSS Frameworks that offer Responsive Design.
+
+They are free, and easy to use.
+
+1. Using w3.css
+
+A great way to create a responsive design, is to use a responsive style sheet, like W3.CSS
+
+W3.CSS makes it easy to develop sites that look nice at any size; desktop, laptop, tablet, or phone:
+
+---example----
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container w3-green">
+  <h1>W3Schools Demo</h1>
+  <p>Resize this responsive page!</p>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+    <p>It is the most populous city in the United Kingdom,
+    with a metropolitan area of over 13 million inhabitants.</p>
+  </div>
+
+  <div class="w3-third">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p>
+    <p>The Paris area is one of the largest population centers in Europe,
+    with more than 12 million inhabitants.</p>
+  </div>
+
+  <div class="w3-third">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p>It is the center of the Greater Tokyo Area,
+    and the most populous metropolitan area in the world.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+site 
+https://www.w3schools.com/w3css/default.asp
+
+
+Another popular framework is bootstrap
+
+Bootstrap uses HTML, CSS and jQuery to make responsive web pages.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>My First Bootstrap Page</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      ...
+    </div>
+    <div class="col-sm-4">
+      ...
+    </div>
+    <div class="col-sm-4">
+    ...
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+--------- HTML COMPUTER CODE --------------------
+1. HTML <kbd> For Keyboard Input
+
+
+The HTML <kbd> element represents user input, like keyboard input or voice commands.
+
+Text surrounded by <kbd> tags is typically displayed in a monospace font:
+
+
+
+<p>Save the document by pressing <kbd> Ctrl + S </kbd></p>
+
+
+2. HTML <samp> For Program Output
+
+The HTML <samp> element represents output from a program or computing system.
+
+Text surrounded by <samp> tags is typically displayed in a monospace font:
+
+
+
+<p>If you input wrong value, the program will return <samp>Error!</samp></p>
+
+
+3. HTML <code> For Computer Code
+
+The HTML <code> element defines a fragment of computer code.
+
+Text surrounded by <code> tags is typically displayed in a monospace font: 
+
+
+<code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+
+
+Notice that the <code> element does not preserve extra whitespace and line-breaks.
+To fix this, you can put the <code> element inside a <pre> element:
+
+To fix this, you can put the <code> element inside a <pre> element:
+
+
+4. HTML <var> For Variables
+
+The HTML <var> element defines a variable.
+
+The variable could be a variable in a mathematical expression or a variable in programming context:
+
+example 
+
+Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.
+
+
+<code>	Defines programming code
+<kbd>	Defines keyboard input 
+<samp>	Defines computer output
+<var>	Defines a variable
+<pre>	Defines preformatted text
+
+
+-------- HTML ENTITIES ------------
+
+
+Reserved characters in HTML must be replaced with character entities.
+
+Characters that are not present on your keyboard can also be replaced by entities.
+
+examples
+
+

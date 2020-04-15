@@ -1,0 +1,640 @@
+GRID AND FLEXBOX
+
+grid and flexboxes are 2 powerful css properties for arranging elements in rows and columns or both
+
+---- Introduction to the GRID
+
+this is a set of CSS properties that allow creation of two-dimensional layouts defined by columns and rows.
+
+Instead of having to manually set an element's position using pixel distances and complicated math (which is the way things used to be!), you can simply set the number of columns and rows you want and let Grid position them for you.
+
+most websites use columns and rows to position element thus most sites use the grid system
+
+css grid is also integrated in all browser
+
+
+-------------a Basic Grid
+In order to create layouts using CSS Grid, you only need to add one line of code to the element where you want to create a grid!
+
+syntax 
+
+selector {
+	display: grid;
+}
+
+lets say we have a div with a class container 
+-----------------------------------------------------
+
+create a file grid.html
+
+make sure u have the html doctype structure and links to ur css file and bootstrap
+
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+</div>
+
+
+create a file grid.css in a css folder
+
+now lets give the divs a specific color 
+
+* {
+    font-family: Helvetica;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+.container div:nth-child(1), div:nth-child(6) {
+    background-color: #B8336A;
+}
+
+.container div:nth-child(2), div:nth-child(7) {
+    background-color: #726DA8;
+}
+
+.container div:nth-child(3), div:nth-child(8) {
+    background-color: #7D8CC4;
+}
+
+.container div:nth-child(4) {
+    background-color: #A0D2DB;
+}
+
+.container div:nth-child(5) {
+    background-color: #C490D1;
+}
+
+
+now lets set up a basic grid using this code in our css 
+
+.container {
+	display: grid;
+}
+
+
+next we set up a custom grid
+
+we set up our columns and rows using two basic properties 
+
+1. grid-template-columns -  lets you set the number of columns and each of their widths.
+
+2. grid-template-rows - lets you set the number of rows and each of their widths.
+
+
+lets set up some columns then
+  
+  .container{
+      display: grid;
+      grid-template-columns: 20% 20% 20$;
+
+  }
+
+Each column is 20% wide. The 20% is relative to the width of the containing element: in this case, the container div. 
+
+the number of columns is set with the number of widths u specify 
+
+---now lets set up the rows
+
+  .container{
+      display: grid;
+      grid-template-columns: 20% 20% 20$;
+      grid-template-rows: 3em 1.6em 1.6em;
+  }
+
+
+now we have 3 rows the first is 3em tall, the second 1.6em tall, the third is 1.6em
+
+we can use the property grid-auto-rows to set any additional rows we did not plan for.
+
+the grid-auto-rows is specified with default value for the size
+
+  .container{
+      display: grid;
+      grid-template-columns: 20% 20% 20$;
+      grid-template-rows: 3em 1.6em 1.6em;
+      grid-auto-rows: 3em;
+  }
+
+
+  --- Grid Gaps
+
+  to set up gaps in ur grid use the grid-gap property with a margin value
+
+  Set one value if you want the gap to be the same between rows and columns. Otherwise, set two values (the first for the gap between rows, the second for the gap between columns).
+
+  .container {
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    grid-auto-rows: 1.6em;
+    grid-gap: 10px;
+}
+
+
+note: u set ur column and row measurement using the units em/rem , percentages and pixels
+
+
+------ CREATING A GRID TEMPLATE AREA
+
+--------------------------------------
+create a web_layout.html file links to css and bootstrap in your doctype
+
+<div class="container">
+    <header>Header</header>
+    <section id="a">Section A</section>
+    <section id="b">Section B</section>
+    <footer>Footer</footer>
+</div>
+
+
+-------------------------------------------
+
+the steps we follow in creating our grid are these:
+
+1. Set the number of columns and rows, and their measurements, in grid-template (or separately in grid-template-columns and grid-template-rows).
+
+2. Define a template using letters, words, or numbers of your choice in grid-template-areas, putting a space between each and putting each row in a set of quotation marks.
+
+3. Map elements to these letters, words, or numbers of your choice by defining grid-area on each element.
+
+ 4.Firstly, in the accompanying CSS, set a grid-template with how many columns and rows you want and their measurements
+
+
+ 1. 
+ .container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  }
+ 
+ 2. create a layout using grid-template-areas, which will contain a coded representation of where your elements fit into a grid, putting each row in a set of quotation marks:
+
+.container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+        "h h h h"
+        "a a b b"
+        "f f f f"
+    ;
+}
+
+
+3. Next, assign each letter in your grid area template to an element within your grid using the grid-area property. For example, to assign the header element to all instances of the letter "h" in your layout:
+
+header {
+    grid-area: h;
+}
+
+------------------ so our full css 
+
+
+body {
+    font-family: Helvetica;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+        "h h h h"
+        "a a b b"
+        "f f f f"
+    ;
+}
+
+header {
+    grid-area: h;
+    background-color: #D0021B;
+}
+
+section#a {
+    grid-area: a;
+    background-color: #9013FE;
+}
+
+section#b {
+    grid-area: b;
+    background-color: #F8E71C;
+}
+
+footer {
+    grid-area: f;
+    background-color: #50E3C2;
+}
+
+----------------------------------------------------
+
+In summary:
+
+Set the number of columns and rows, and their measurements, in grid-template (or separately in grid-template-columns and grid-template-rows).
+
+Define a template using letters, words, or numbers of your choice in grid-template-areas, putting a space between each and putting each row in a set of quotation marks.
+
+Map elements to these letters, words, or numbers of your choice by defining grid-area on each element.
+
+
+to make ur grids responsive 
+
+add the property 
+auto-fit, minmax();
+
+e.g
+ grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+
+---------------------------------------
+FlexBox
+
+Flexbox is pure CSS used to create one column dimensions
+
+the syntax for a flex 
+selector {
+	display:flex;
+
+}
+
+
+---s------------------------------------
+create a flex.html file
+
+<div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+v
+
+----------------------------------------
+
+css flex.css
+
+------------------------------------------
+
+* {
+    font-family: Helvetica;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    border: 2px solid black;
+}
+
+.item {
+    width: 100px;
+    height: 70px;
+}
+
+.container div:nth-child(1), div:nth-child(6) {
+    background-color: #00BFB8;
+}
+
+.container div:nth-child(2), div:nth-child(7) {
+    background-color: #8E007E;
+}
+
+.container div:nth-child(3), div:nth-child(8) {
+    background-color: #23D0EA;
+}
+
+.container div:nth-child(4) {
+    background-color: #EF8956;
+}
+
+.container div:nth-child(5) {
+    background-color: #060A3D;
+}
+
+------------------------------------------------
+
+add flexbox to container class
+
+.container {
+    display: flex;
+}
+
+------the flex-direction property
+
+flex-direction . This lets you add elements in a row or column.
+
+
+flex-direction  has four possible values:
+
+1.row  (elements from left to right)
+
+2.row-reverse  (elements from right to left)
+
+3.column  (elements from top to bottom)
+
+4.column-reverse  (elements from bottom to top)
+--------------------------------------------
+
+.container { 
+    display: flex; 
+    flex-direction: row; 
+}
+
+switch the values to see difference
+----------------------------------------------
+
+WRAPPING
+
+Sometimes, your elements will be too large for your containing element. I'll update the width of our items from 100px to 200px to make this the case:
+
+
+-----------------------------------------
+
+add to ur css 
+
+.item {
+    width: 200px;
+    height: 70px;
+}
+
+------------------------------------------
+
+the flex-wrap property has the following values 
+
+
+wrap  : the flex items can take up multiple lines as needed, whether they're arranged in rows or columns.
+
+nowrap  : the flex items cannot take up multiple lines. They'll all cramp into either one row or column.
+
+wrap-reverse  : the flex items can take up multiple lines as needed but are displayed in reverse (see the example below to make sense of this).
+
+
+------------------------------------------------
+ change ur container class to this 
+
+ .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+switch to wrap-reverse to see diff
+
+the nowrap is the default property of a flexbox
+------------------------------------------------
+
+you can combine the direction and wrapping of A flexbox using the flex-flow property
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* becomes */
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+------------------------------------------------
+
+Items in Flexbox are arranged horizontally or vertically depending on whether you specify row or column for your flex-direction.
+
+
+To change their alignment, use  justify-content  , which can accept the following values:
+
+flex-start  : aligned at the start of the container
+
+flex-end  : aligned at the end of the container
+
+center  : aligned in the center of the container
+
+space-between  : elements are spread out along the axis (there's space between each)
+
+space-around  : elements are spread out along the axis, but there's also space around the edges
+
+space-evenly: 
+
+----------------------------------------------
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+switch the values to see the difference 
+----------------------------------------------
+
+Align multiple lines of content in a flexbox
+
+use the following properties to align
+
+1.justify-content  : align items along the main axis
+
+2.Align-items  : align items along the cross axis
+
+3.align-content  : align multiple rows or columns along the cross-axis
+
+
+---the align-content
+
+  align-content  property that can take the following values:
+
+1.flex-start  : elements are placed at the beginning of the container
+
+2.flex-end  : elements are placed at the end of the container
+
+3.center  : elements are placed in the center
+
+4.space-between  : elements are separated with space around them
+
+5. space-around  : elements are separated with space around them, as well as space between the elements the container edge
+
+6. stretch  : this is the default. Elements stretch to take up the whole container.
+
+--------------------------------------------
+
+.container {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+
+}
+
+switch value to see difference 
+
+------------------------------------------------
+ --- Adjusting Flex Dimensions
+
+we use the flex-basis property 
+
+.item {
+  flex-basis: 100px;
+}
+
+---------------------------------------------------
+
+
+POSITIONING IN CSS
+
+The  position  property's default value is  static  . This just means the element appears where it normally would in the flow of your HTML document. Additional possible positioning properties we'll explore include  relative  ,  absolute  , and  fixed  positioning.
+
+
+-------Relative positioning
+
+
+---------------------
+
+create a positioning.html file
+
+
+<article>
+  <h1>New York's best coffeeshops</h1>
+  <img src="https://images.unsplash.com/photo-1492158244976-29b84ba93025?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=01425b0c3fb3f3b6bc9edbd38447ec72">
+
+</article>
+
+
+
+then in css create a  position.css
+
+-----------------------------------------------
+
+img {
+    position: relative;
+    top: 40px;
+    left: 30px;
+}
+
+
+
+------------Absolute positioning
+
+Absolutely positioned elements are set relative to their nearest explicitly positioned ancestor
+
+
+. If you haven't explicitly set any positioning values on previous elements, the absolutely positioned element will appear relative to the edges of the document. 
+
+Define offset values for absolutely positioned elements the same way you would for relatively positioned elements: by defining top, bottom, left, or right values.
+
+Let's change our  image to have an absolute position, offset by 10px from the top and 30px from the left:
+
+---------------------------------------
+
+img {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+
+----------------------------------------
+
+-----Fixed positioning
+
+The last positioning value we'll see here is fixed positioning. This is similar to absolute and relative positioning in that you have to set top, bottom, left, and right values. However, an element with a fixed position will scroll with the page and will often be positioned relative to the entire viewport, except in a very specific subset of cases.
+
+----------------------------------------------
+so let's reduce the size of the coffee image, move it to the top right of the page, and change its positioning to fixed:
+
+
+img {
+    width: 100px;
+    position: fixed;
+    top: 45px;
+    left: 35px;
+}
+
+the image never moves when u scroll up and down
+------------------------------------------------
+
+
+----- FLOATING ELEMENTS 
+
+u can also float the elements in a html document to either right or left using the float property in css
+------------------------------------
+
+div {
+    float: left;
+}
+-------------------------------------
+
+
+but there are third party solutions 
+
+i.e bootstrap,bulma and foundation to mention a few
+
+
+conclusion: bootstrap or css ?
+
+Bootstrap is a very cool library originally made by the developers at Twitter that includes defaults for fonts, buttons, and more that you can customize to fit your needs. It also has an incredible column system that makes creating well-proportioned, responsive layouts easy. However, CSS itself is a powerful language, and if you can build your own solutions just using the language, power to you!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

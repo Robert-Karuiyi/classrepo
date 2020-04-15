@@ -1,0 +1,51 @@
+What is Git vs. GitHub?
+
+Git is a source code version control system, which is a series of "commits" or snapshots of your code. You make the commits manually.
+
+GitHub is a website (github.com) where you can publish your Git repositories for public download and possible collaboration.
+
+10 steps of Github.
+
+Step 1: Create a Repository on the GitHub Site
+ - register for a GitHub account.
+ - create a repository
+
+Step 2: Install and configure git
+
+ - open terminal 
+ - type : git config --global user.name "username"
+
+          git config --global user.email "your_email@example.com"
+
+Step 3: navigate to your source code directory 
+
+Step 4: Intialize your git repository in terminal on the project , using the command
+   git init
+
+Step 5: add the remote origin for your code repository to your local machine
+      git remote add origin 
+ 
+Step 6: check your unstage files using the command 
+    git status : red color indicates unstaged files
+
+Step 7 : stage the files u want to commit 
+     git add .
+
+Step 8: check if files have been staged using git status : green color indicates staged files 
+
+Step 9: commit your code to the code repository appending a message to it
+     git commit -m "your message here"
+
+Step 10: push ur code to the online repository using the command 
+     git push origin master
+
+
+ so whenever u make a change in ur file u should repeat the steps on 7 , 9 , 10
+     ^^
+
+     if u are pushing to a new repository start on stage one 
+
+
+     These are the basic commands of using github but advanced commands can be used to accomplish sth.
+
+Step 10: 
