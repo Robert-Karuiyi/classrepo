@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>arrays</title>
+</head>
+<body>
+
+<script>
+function makePhrases() {
+var words1 = ["24/7", "multi-tier", "B-to-B", "win-win","guaranteed","buy","outside the box"];
+var words2 = ["empowered", "value-added", "goal-oriented", "focused", "aligned","more","bleeding edge"];
+var words3 = ["process", "solution", "tipping-point", "strategy", "vision","spend-less","bargain","discount"];
+var rand1 = Math.floor(Math.random() * words1.length);
+var rand2 = Math.floor(Math.random() * words2.length);
+var rand3 = Math.floor(Math.random() * words3.length);
+var phrase = words1[rand1] + " " + words2[rand2] + " " + words3[rand3];
+alert(phrase);
+}
+makePhrases();
+</script>
+
+<script src="phrase-o-matic.js"></script>
+</body>
+</html>
